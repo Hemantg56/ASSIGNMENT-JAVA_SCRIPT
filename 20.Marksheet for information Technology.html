@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet for information Technology.</title>
+
+    <style>
+        body {
+            counter-reset: inc;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .main {
+            height: 400px;
+            width: 35%;
+            margin: 100px auto;
+            border: 2px solid;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* grid-template-rows: 400px; */
+            font-size: 1.2rem;
+            line-height: 3px;
+        }
+        
+        .lag::before {
+            counter-increment: inc;
+            content: counter(inc)". ";
+        }
+        
+        .mark {
+            padding-top: 10px;
+        }
+        
+        input {
+            margin: 0px 0;
+        }
+        
+        button {
+            padding: 6px 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Enter Mark</h1>
+        <div class="info ">
+            <div class="name">
+                <p class="lag">C Language</p>
+                <p class="lag">C++ Language</p>
+                <p class="lag">DataBase</p>
+                <p class="lag">HTML</p>
+                <p class="lag">CSS</p>
+                <p class="lag">PHP</p>
+                <p class="lag">Core java</p>
+            </div>
+            <div class="mark">
+                <input type="text" name="" id="n1">
+                <br><br>
+                <input type="text" name="" id="n2">
+                <br><br>
+                <input type="text" name="" id="n3">
+                <input type="text" name="" id="n4">
+                <input type="text" name="" id="n5">
+                <input type="text" name="" id="n6">
+                <input type="text" name="" id="n7">
+                <br><br>
+                <button id="res" onclick="test()">Result</button>
+            </div>
+
+            <p class="total">Total is: <span id="mix">000</span>/350</p>
+            <p class="per">Percentage is: <span id="taka">00</span>%</p>
+        </div>
+
+        <script>
+            input = document.getElementsByTagName('input')
+                // in1 = document.getElementById('n1')
+                // in2 = document.getElementById('n2')
+                // in3 = document.getElementById('n3')
+                // in4 = document.getElementById('n4')
+                // in5 = document.getElementById('n5')
+                // in6 = document.getElementById('n6')
+                // in7 = document.getElementById('n7')
+
+            but = document.getElementById('res')
+            total = document.getElementById('mix')
+            par = document.getElementById('taka')
+            h1_tag = document.getElementsByTagName('h1')
+                // par.innerHTML.toFixed(2)
+
+            // console.log(input[0].value);
+
+
+
+            function test() {
+                total.innerText = Number(input[0].value) + Number(input[1].value) + Number(input[2].value) + Number(input[3].value) + Number(input[4].value) + Number(input[5].value) + Number(input[6].value);
+                total.style.color = 'blue';
+                total_1 = (total.innerHTML / 350) * 100;
+                par_1 = total_1.toFixed(2);
+                par.innerHTML = par_1;
+                par.style.color = 'blue';
+                for (i = 0; i < input.length; i++) {
+                    if (input[i].value.length == 0) {
+                        alert('Required...!')
+                        return false;
+                    }
+                    // return true;
+                }
+            }
+
+
+            // input[0].value.alert('resqws..!')
+
+            // if(input[0].va)
+
+            // function submit() {
+            //     for (i = 0; i < input.length; i++) {
+            //         if (input[i].value == null) {
+            //             alert('Requed...!')
+            //             h1_tag.innerHTML = 'hello'
+            //                 // return i;
+            //                 // input[i].style.border = '2px solid red'
+            //         }
+            //     }
+            // }
+        </script>
+
+    </div>
+</body>
+
+</html>

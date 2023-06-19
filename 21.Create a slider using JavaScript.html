@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Create a slider using JavaScript </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .main {
+            height: 470px;
+            /* margin: 50px auto; */
+            background: blueviolet;
+            text-align: center;
+            /* padding: 10px 0; */
+            color: #fff;
+            position: relative;
+        }
+        
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .x {
+            height: 50px;
+            width: 50px;
+            background-color: black;
+            border-radius: 50%;
+            line-height: 50px;
+            position: absolute;
+            top: 200px;
+        }
+        
+        .next {
+            right: 0;
+        }
+        
+        .preview {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="img/pexels-photo-1213294.webp" alt="" class="slider" width="100%" height="450px">
+        <img src="img/pexels-photo-3311574.jpeg" alt="" class="slider" width="100%" height="450px">
+        <img src="img/pexels-photo-3422964.webp" alt="" class="slider" width="100%" height="450px">
+        <img src="img/pexels-photo-3608542.jpeg" alt="" class="slider" width="100%" height="450px">
+        <img src="img/pexels-photo-754595.jpeg" alt="" class="slider" width="100%" height="450px">
+
+        <div class="next x" onclick="next_page()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+        <div class="preview x">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+
+    </div>
+
+    <script>
+        function hem() {
+
+            img_tag = document.getElementsByTagName('img')
+            next_bu = document.getElementsByClassName('next')
+            pre_bu = document.getElementsByClassName('preview')
+            index = 0
+
+
+            function next_page() {
+                for (i = 0; i < img_tag.length; i++) {
+                    img_tag[i].style.left = '100%'
+                }
+                img_tag[index].style.left = '0%'
+                index++;
+
+                if (index == img_tag.length) {
+                    index = 0
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

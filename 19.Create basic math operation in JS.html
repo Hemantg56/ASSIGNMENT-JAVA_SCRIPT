@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create basic math operation in JS.</title>
+    <style>
+        .main {
+            height: 200px;
+            width: 30%;
+            border: 2px solid;
+            margin: 200px auto;
+            text-align: center;
+            line-height: 20px;
+        }
+        
+        label {
+            font-size: 1.2rem;
+            margin-right: 50px;
+        }
+        
+        .span {
+            margin-left: 20px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Maths Operations</h1>
+
+        <label for="num1">Enter 1st Number:</label>
+        <input type="text" name="num1" id="n1">
+        <br><br>
+
+        <label for="num2">Enater 2nd Number:</label>
+        <input type="text" name="num2" id="n2">
+        <br><br>
+
+        <button id="puls"> +</button>
+        <button id="min"> -</button>
+        <button id="mul"> *</button>
+        <button id="div"> /</button>
+        <button id="mol"> %</button>
+
+        <span id="res">
+
+        </span>
+    </div>
+
+    <script>
+        in1 = document.getElementById('n1')
+        in2 = document.getElementById('n2')
+        but1 = document.getElementById('puls')
+        but2 = document.getElementById('min')
+        but3 = document.getElementById('mul')
+        but4 = document.getElementById('div')
+        but5 = document.getElementById('mol')
+
+
+        result = document.getElementById('res')
+
+        result.classList.add('span')
+
+        but1.addEventListener("click", plus)
+        but2.addEventListener("click", min)
+        but3.addEventListener("click", mul)
+        but4.addEventListener("click", div)
+        but5.addEventListener("click", mol)
+
+
+        function plus() {
+            result.innerHTML = Number(in1.value) + Number(in2.value)
+        }
+
+
+        function min() {
+            result.innerHTML = Number(in1.value) - Number(in2.value)
+        }
+
+        function mul() {
+            result.innerHTML = Number(in1.value) * Number(in2.value)
+        }
+
+        function div() {
+            result.innerHTML = Number(in1.value) / Number(in2.value)
+        }
+
+        function mol() {
+            result.innerHTML = Number(in1.value) % Number(in2.value)
+        }
+    </script>
+</body>
+
+</html>
